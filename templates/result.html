@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Analysis Result - DocuGuard AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <a href="{{ url_for('home') }}" class="logo">
+        DocuGuard <span>AI</span>
+    </a>
+
+</nav>
+
+
+<main class="result-page">
+
+    <div class="result-header">
+
+        <div class="badge">
+            📊 AI Analysis Report
+        </div>
+
+        <h1>Document Analysis</h1>
+
+        <p>
+            File: <strong>{{ filename }}</strong>
+        </p>
+
+    </div>
+
+
+    <div class="result-card">
+
+        {% if result.label == "POSSIBLY FORGED" %}
+
+            <div class="result-icon">
+                ⚠️
+            </div>
+
+            <div class="result-status forged">
+                POSSIBLY FORGED
+            </div>
+
+        {% elif result.label == "LIKELY AUTHENTIC" %}
+
+            <div class="result-icon">
+                🛡️
+            </div>
+
+            <div class="result-status authentic">
+                LIKELY AUTHENTIC
+            </div>
+
+        {% else %}
+
+            <div class="result-icon">
+                ❌
+            </div>
+
+            <div class="result-status">
+                {{ result.label }}
+            </div>
+
+        {% endif %}
+
+
+        <div class="confidence">
+
+            Confidence:
+            <strong>{{ result.confidence }}%</strong>
+
+        </div>
+
+
+        <div class="analysis-section">
+
+            <h2>🔍 Analysis Indicators</h2>
+
+            {% for reason in result.reasons %}
+
+                <div class="reason">
+
+                    <span>•</span>
+
+                    {{ reason }}
+
+                </div>
+
+            {% endfor %}
+
+        </div>
+
+
+        {% if result.pages %}
+
+        <div class="document-stat">
+
+            📄 Pages Analyzed:
+            <strong>{{ result.pages }}</strong>
+
+        </div>
+
+        {% endif %}
+
+
+        <div class="analysis-section">
+
+            <h2>📋 Analysis Summary</h2>
+
+            <p class="summary">
+
+                The system analyzed available visual characteristics
+                of the uploaded document and generated the assessment
+                shown above.
+
+            </p>
+
+        </div>
+
+
+        <a href="{{ url_for('upload') }}"
+           class="primary-button">
+
+            Upload Another Document
+
+        </a>
+
+    </div>
+
+
+    <div class="disclaimer">
+
+        ⚠️ This AI assessment identifies possible visual
+        inconsistencies. It is not legal proof of document
+        authenticity or forgery.
+
+    </div>
+
+</main>
+
+</body>
+
+</html>

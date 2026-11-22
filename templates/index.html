@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DocuGuard AI</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="logo">
+            DocuGuard <span>AI</span>
+        </div>
+
+        <a href="{{ url_for('upload') }}" class="nav-button">
+            Analyze Document
+        </a>
+
+    </nav>
+
+
+    <main class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                🔐 AI-Powered Document Analysis
+            </div>
+
+            <h1>
+                Detect Possible
+                <span>Document Forgery</span>
+            </h1>
+
+            <p>
+                Upload a PDF or document image and let our AI-powered
+                analysis identify possible signs of manipulation,
+                inconsistency, or alteration.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="{{ url_for('upload') }}" class="primary-button">
+                    📄 Upload Document
+                </a>
+
+                <a href="#how-it-works" class="secondary-button">
+                    How It Works
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="scan-line"></div>
+
+            <div class="document-icon">
+                📄
+            </div>
+
+            <h3>Document Analysis</h3>
+
+            <p>
+                AI inspection ready
+            </p>
+
+            <div class="analysis-item">
+                <span>Image Analysis</span>
+                <span>✓</span>
+            </div>
+
+            <div class="analysis-item">
+                <span>OCR Analysis</span>
+                <span>✓</span>
+            </div>
+
+            <div class="analysis-item">
+                <span>ML Prediction</span>
+                <span>AI</span>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <section id="how-it-works" class="how-section">
+
+        <h2>How It Works</h2>
+
+        <p class="section-description">
+            A simple three-step document analysis process.
+        </p>
+
+
+        <div class="steps">
+
+            <div class="step-card">
+
+                <div class="step-number">01</div>
+
+                <h3>Upload</h3>
+
+                <p>
+                    Upload your PDF, JPG, JPEG or PNG document.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">02</div>
+
+                <h3>Analyze</h3>
+
+                <p>
+                    The system processes the document using
+                    image analysis, OCR and machine learning.
+                </p>
+
+            </div>
+
+
+            <div class="step-card">
+
+                <div class="step-number">03</div>
+
+                <h3>Get Result</h3>
+
+                <p>
+                    View the AI assessment, confidence and
+                    detected indicators.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+
+        <p>
+            DocuGuard AI • AI-Based Document Forgery Detection
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
